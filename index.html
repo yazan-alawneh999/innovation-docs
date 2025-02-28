@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wafeer - Technical Documentation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f4f4f4;
+      }
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #333;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background: #007bff;
+        color: white;
+      }
+      code {
+        background: #eee;
+        padding: 3px 6px;
+        border-radius: 5px;
+      }
+      pre {
+        background: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>📌 NearExpire Admin - Technical Documentation</h1>
+
+      <h2>1. Introduction</h2>
+      <p>
+        This document provides a high-level overview of the NearExpire Admin
+        application, including its architecture, technology stack, security
+        mechanisms, and deployment strategy.
+      </p>
+
+      <h2>2. SDK Versions & Configuration</h2>
+      <pre>
+    compileSdk = 34
+    minSdk = 28
+    targetSdk = 34
+    applicationId = "com.big0soft.nearexpireadmin"
+    Java Version: 17
+    </pre
+      >
+
+      <h2>3. System Architecture</h2>
+      <p>
+        The application follows a client-server architecture where multiple
+        frontends (Android & Web) communicate with the backend via RESTful APIs.
+      </p>
+
+      <h3>Key Components:</h3>
+      <ul>
+        <li>Frontend: Android (MVVM) & Web (Vue 3/Nuxt.js)</li>
+        <li>Backend: Spring Boot Microservices (Java 17), OAuth2 Security</li>
+        <li>Infrastructure: Docker, Google Cloud, Docker Compose Secrets</li>
+      </ul>
+
+      <h2>4. Technology Stack & Versions</h2>
+
+      <h3>Frontend (Android - MVVM)</h3>
+      <table>
+        <tr>
+          <th>Technology</th>
+          <th>Version</th>
+        </tr>
+        <tr>
+          <td>Java</td>
+          <td>17</td>
+        </tr>
+        <tr>
+          <td>Material Design</td>
+          <td>1.12.0</td>
+        </tr>
+        <tr>
+          <td>Room Database</td>
+          <td>2.6.1</td>
+        </tr>
+        <tr>
+          <td>JUnit</td>
+          <td>4.13.2</td>
+        </tr>
+        <tr>
+          <td>Glide</td>
+          <td>4.16.0</td>
+        </tr>
+      </table>
+
+      <h3>Frontend (Web - Vue 3 & Nuxt.js)</h3>
+      <table>
+        <tr>
+          <th>Technology</th>
+          <th>Version</th>
+        </tr>
+        <tr>
+          <td>Vue 3</td>
+          <td>Latest</td>
+        </tr>
+        <tr>
+          <td>Nuxt.js</td>
+          <td>Latest</td>
+        </tr>
+        <tr>
+          <td>Axios</td>
+          <td>Latest</td>
+        </tr>
+      </table>
+
+      <h3>Backend (Spring Boot Microservices)</h3>
+      <table>
+        <tr>
+          <th>Technology</th>
+          <th>Version</th>
+        </tr>
+        <tr>
+          <td>Spring Boot</td>
+          <td>Java 17</td>
+        </tr>
+        <tr>
+          <td>MySQL</td>
+          <td>Latest</td>
+        </tr>
+        <tr>
+          <td>Spring Security</td>
+          <td>OAuth2</td>
+        </tr>
+        <tr>
+          <td>JMeter</td>
+          <td>5.5</td>
+        </tr>
+      </table>
+
+      <h2>5. API Design</h2>
+      <ul>
+        <li>RESTful API with Spring Boot</li>
+        <li>Multipart file uploads</li>
+        <li>OAuth2 authentication</li>
+      </ul>
+
+      <h2>6. Security & Authentication</h2>
+      <ul>
+        <li>JWT-based authentication</li>
+        <li>Spring Security with OAuth2</li>
+        <li>Docker Secrets for managing sensitive data</li>
+      </ul>
+
+      <h2>7. Testing Strategy</h2>
+      <table>
+        <tr>
+          <th>Test Type</th>
+          <th>Tool</th>
+          <th>Version</th>
+        </tr>
+        <tr>
+          <td>Unit Testing</td>
+          <td>JUnit</td>
+          <td>4.13.2</td>
+        </tr>
+        <tr>
+          <td>Load Testing</td>
+          <td>JMeter</td>
+          <td>5.5</td>
+        </tr>
+        <tr>
+          <td>Mocking</td>
+          <td>Mockito</td>
+          <td>5.14.2</td>
+        </tr>
+      </table>
+
+      <h2>8. Notifications & Messaging</h2>
+      <ul>
+        <li>WebSocket with STOMP for real-time notifications</li>
+        <li>Twilio for phone verification</li>
+        <li>SMTP-based email notifications</li>
+      </ul>
+
+      <h2>9. Deployment Process</h2>
+      <pre>
+    [Source Code] ---> (Build Process) ---> [Docker Container]
+    [Docker Container] ---> (Multi-Stage Build) ---> [Google Cloud Deployment]
+    [Secrets Management] ---> (Docker Compose Secrets) ---> [Secured Deployment]
+    </pre
+      >
+
+      <h2>10. Conclusion</h2>
+      <p>
+        The system is designed to be scalable, secure, and high-performing,
+        following best practices such as:
+      </p>
+      <ul>
+        <li>SOLID principles</li>
+        <li>Microservices architecture</li>
+        <li>Modern frontend frameworks</li>
+        <li>OAuth2 authentication</li>
+        <li>Dockerized deployment</li>
+      </ul>
+
+      <p>
+        This documentation serves as a comprehensive technical guide for
+        NearExpire Admin.
+      </p>
+    </div>
+  </body>
+</html>
